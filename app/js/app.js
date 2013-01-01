@@ -3,12 +3,12 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/usecase/:usecaseId', {
-            title: "Usecase", 
-            templateUrl: 'partials/usecase.html', 
-            controller: DeviceAnalyticController
+        $routeProvider.when('/home', {
+            title: "Hello there", 
+            templateUrl: 'partials/mypartial.html', 
+            controller: MyCtrl
         })
-        .otherwise({redirectTo: '/pinboard'});
+        .otherwise({redirectTo: '/home'});
     }])
     .run(['$location', '$rootScope', function($location, $rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {

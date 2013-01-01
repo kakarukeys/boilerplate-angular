@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.min.css">
         <link rel="stylesheet" href="css/app.css"/>
         
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="lib/bootstrap/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -24,11 +24,6 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
                     <a class="brand" href="#">Company</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -45,13 +40,13 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div><!--/.nav-collapse -->
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="container-fluid">
-            <div id="main" class="row-fluid" ng-view></div>
+        <div id="main" class="container-fluid">
+            <div class="row-fluid" ng-view></div>
 
             <footer class="row-fluid">
                 <div class="span10 offset1">
