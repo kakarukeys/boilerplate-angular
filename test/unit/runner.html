@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Jasmine Spec Runner: Project</title>
+
+  <link href="http://pivotal.github.com/jasmine/lib/jasmine.css" rel="stylesheet"/>
+  <script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine.js"></script>
+  <script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine-html.js"></script>
+  <script type="text/javascript">
+    // yes, really keep this here to keep us honest, but only for jasmine's own runner! [xw]
+    undefined = "diz be undefined yo";
+  </script>
+
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../../app/lib/jquery/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../../app/lib/jquery/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="../../app/lib/underscore/underscore-min.js"></script>
+
+  <script type="text/javascript" src="../../app/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="../../app/lib/angular/angular-resource.min.js"></script>
+  <script type="text/javascript" src="../lib/angular/angular-mocks.js"></script>
+  <script type="text/javascript" src="../../app/js/app.js"></script>
+  <script type="text/javascript" src="../../app/js/controllers.js"></script>
+  <script type="text/javascript" src="../../app/js/directives.js"></script>
+  <script type="text/javascript" src="../../app/js/filters.js"></script>
+  <script type="text/javascript" src="../../app/js/plugins.js"></script>
+  <script type="text/javascript" src="../../app/js/services.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="controllersSpec.js"></script>
+  <script type="text/javascript" src="directivesSpec.js"></script>
+  <script type="text/javascript" src="filtersSpec.js"></script>
+  <script type="text/javascript" src="servicesSpec.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })());
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
