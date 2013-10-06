@@ -97,10 +97,7 @@ StaticServlet.prototype.handleRequest = function(req, res) {
     if (err)
       return self.sendMissing_(req, res, path);
     if (stat.isDirectory())
-      if (path == "./") //JF: redirect to index.html if requesting /
-        return self.sendFile_(req, res, path + "index.html");
-      else
-        return self.sendDirectory_(req, res, path);
+      return self.sendDirectory_(req, res, path);
     return self.sendFile_(req, res, path);
   });
 }

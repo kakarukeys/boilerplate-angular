@@ -1,6 +1,7 @@
 'use strict';
 
-function MyCtrl($scope) {
-    $scope.msg = "Hello World!";
-}
-MyCtrl.$inject = ["$scope"];
+angular.module('myApp.controllers', [])
+    .controller('MyCtrl', ["$scope", function($scope) {
+        $scope.msg = "Hello World!";
+    }]);
+    

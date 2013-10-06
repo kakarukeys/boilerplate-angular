@@ -1,12 +1,12 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
+angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {
             title: "Hello there", 
             templateUrl: 'partials/mypartial.html', 
-            controller: MyCtrl
+            controller: "MyCtrl"
         })
         .otherwise({redirectTo: '/home'});
     }])
@@ -19,7 +19,3 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
         });
     }]);
     
-/* 
- setting up namespace and libraries
- */
-var IP = (typeof IP === 'undefined') ? {} : IP;

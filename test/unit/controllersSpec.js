@@ -1,8 +1,9 @@
 'use strict';
 
-/* jasmine specs for controllers go here */
-describe('PinboardController test', function() {
-    describe('PinboardController', function() {
+describe('controllers', function() {
+    beforeEach(module('myApp.controllers'));
+
+    describe('PinboardController', inject(function(PinboardController) {
         var scope, controller, $http;
         scope = {};
         controller = new PinboardController(scope);
@@ -10,5 +11,5 @@ describe('PinboardController test', function() {
         it('should read 7 usecases ', function() {
             expect(scope.usecases.length).toBe(7);
         });
-    });
+    }));
 });

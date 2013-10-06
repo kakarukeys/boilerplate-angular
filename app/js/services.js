@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.services', ['ngResource'])
-    .factory('rest', function($resource) {
+    .factory('rest', ["$resource", function($resource) {
         return $resource('../api/get/:usecaseId/:granularity/:start-:end', {}, {
             //return $resource('api/device-analytics/24h/data.json', {}, {
             query: {
@@ -14,4 +14,4 @@ angular.module('myApp.services', ['ngResource'])
                 isArray:false
             }
         });
-    });
+    }]);
